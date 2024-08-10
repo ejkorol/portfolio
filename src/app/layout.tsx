@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers/providers";
+import NavBar from "./components/NavBar";
+import NavBottom from "./components/NavBottom";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +17,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" className="dark">
       <body className={inter.className}>
         <Providers>
-          {children}
+          <NavBar />
+            {children}
+          <NavBottom />
         </Providers>
       </body>
     </html>
